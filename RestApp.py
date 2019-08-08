@@ -7,8 +7,6 @@ import json
 app = Flask(__name__)
 api = Api(app)
 
-todos = {}
-
 class SnakeSimple(Resource):
     def get(self):
         game = SnakeGame()
