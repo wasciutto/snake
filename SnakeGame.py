@@ -66,6 +66,11 @@ class SnakeGame:
     def voidGame(self):
         pass
 
+    #Ensure all snake parts are connected with only one head
+    #UNIMPEMENTED
+    def validateSnakeIntegrity(self):
+        pass
+
 if __name__ == "__main__":
     game = SnakeGame()
     game.newGame()
