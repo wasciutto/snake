@@ -53,6 +53,14 @@ class SnakeGame:
     def checkSnakeEating(self):
         pass
 
+    #Returns the position of the snake head
+    def findHead(self):
+        pass
+
+    #Resets the game if invalid state is invalid
+    def voidGame(self):
+        pass
+
 if __name__ == "__main__":
     game = SnakeGame()
     game.newGame()
