@@ -1,8 +1,13 @@
 import numpy as np
+import random
 
 class SnakeGame:
 
     boardSize = 16
+    snakeBody = 1
+    snakeHead = 2
+    food = 3
+    headEating = 4
 
     #Set up an empty game board
     def __init__(self):
@@ -13,6 +18,9 @@ class SnakeGame:
 
     #Set up the snake in a random position
     def newGame(self):
+        startX = random.randint(0, 15)
+        startY = random.randint(0, 15)
+        self.gameBoard.itemset((startX, startY), SnakeGame.snakeHead)
         pass
 
     #Print the game board to console
