@@ -19,6 +19,11 @@ class SnakeGame:
     def printGame(self):
         print(np.matrix(self.gameBoard))
 
+    def checkSnakeSize(self):
+        pass
+
+    def checkSnakeEating(self):
+        pass
 
 if __name__ == "__main__":
     game = SnakeGame()
