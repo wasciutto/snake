@@ -18,10 +18,30 @@ class SnakeGame:
 
     #Set up the snake in a random position
     def newGame(self):
-        startX = random.randint(0, 15)
-        startY = random.randint(0, 15)
+        #Place the head
+        #Range assures enough room for body without bounds checking
+        startX = random.randint(4, SnakeGame.boardSize - 5)
+        startY = random.randint(4, SnakeGame.boardSize - 5)
         self.gameBoard.itemset((startX, startY), SnakeGame.snakeHead)
-        pass
+
+        #Choose a direction to build the body
+        randDirection = random.randint(0, 3)
+        #Build up
+        if(randDirection == 0):
+            for i in range(1, 5):
+                self.gameBoard.itemset((startX - i, startY), SnakeGame.snakeBody)
+        #Build down
+        elif(randDirection == 1):
+            for i in range(1, 5):
+                self.gameBoard.itemset((startX + i, startY), SnakeGame.snakeBody)
+        #Build left
+        elif(randDirection == 2):
+            for i in range(1, 5):
+                self.gameBoard.itemset((startX, startY - i), SnakeGame.snakeBody)
+        #Build right
+        elif(randDirection == 3):
+            for i in range(1, 5):
+                self.gameBoard.itemset((startX, startY + i), SnakeGame.snakeBody)
 
     #Print the game board to console
     def printGame(self):
