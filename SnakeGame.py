@@ -60,24 +60,24 @@ class SnakeGame:
                 if (self.gameBoard[i][j] == SnakeGame.snakeBody or
                 self.gameBoard[i][j] == SnakeGame.snakeHead):
                     count = count + 1
-        print(count)
+        print("Snake size: " + str(count))
         if(count > self.snakeLength):
             self.voidGame()
 
-    def isSnakeEating(self):
+    def checkEating(self):
         for i in range(SnakeGame.boardSize):
             for j in range(SnakeGame.boardSize):
-                if (self.gameBoard[i][j] == SnakeGame.checkSnakeEating):
-                    return True
-        return False
-
-    def eatFood(self):
-        self.gameBoard[i][j] = SnakeGame.snakeHead
-        self.snakeBody = self.snakeBody + 1
-        self.turn = self.turn + 1
-        self.resetFood()
-        self.growSnake()
-
+                if (self.gameBoard[i][j] == SnakeGame.headEating):
+                    self.gameBoard[i][j] = SnakeGame.snakeHead
+                    self.snakeBody = self.snakeBody + 1
+                    self.turn = self.turn + 1
+                    self.resetFood()
+                    self.growSnake()
+                    print("Food consumed")
+                    break
+        print("No food consumed")
+    
+    #TODO    
     def growSnake(self):
         pass
 
