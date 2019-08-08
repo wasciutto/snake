@@ -45,11 +45,19 @@ class SnakeGame:
 
     #Print the game board to console
     def printGame(self):
-        for i in range(len(self.gameBoard)):
+        for i in range(SnakeGame.boardSize):
             print(self.gameBoard[i])
 
     def checkSnakeSize(self):
-        pass
+        count = 0
+        for i in range(SnakeGame.boardSize):
+            for j in range(SnakeGame.boardSize):
+                if (self.gameBoard[i][j] == SnakeGame.snakeBody or
+                self.gameBoard[i][j] == SnakeGame.snakeHead):
+                    count = count + 1
+        print(count)
+        if(count > self.snakeLength):
+            self.voidGame()
 
     def checkSnakeEating(self):
         pass
@@ -62,4 +70,4 @@ if __name__ == "__main__":
     game = SnakeGame()
     game.newGame()
     game.printGame()
-    print(game.findHead())
+    game.checkSnakeSize()
